@@ -1,0 +1,62 @@
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+.action-bar {
+  width: 100%;
+  background: gray;
+}
+
+.main {
+  width: 100%;
+}
+
+.mid {
+  width: 80%;
+}
+
+.action-bar ul {
+  list-style-type: none;
+}
+
+.posted-by {
+  text-align: right;
+}
+
+.action-bar li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.post {
+  margin: 0 auto;
+  width: 80%;
+  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.upper p, .lower p {
+  display: inline-block;
+}
+
+.post-img {
+  height: 130px;
+  width: 180px;
+}
+
+.post-title {
+  display: inline-block;
+}
+
+.image-section, .content-section {
+  display: inline-block;
+}
+
+.content-section {
+  width: 82%;
+}
