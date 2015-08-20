@@ -1,62 +1,63 @@
-body, p {
+body{
+  padding-top: 50px;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.post {
+  text-align: center;
+  background: #e7e7e7;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.post-img {
+  height: 174px;
+  width: 220px;
+}
+
+.post-title {
   margin: 0;
-  padding: 0;
 }
 
-.action-bar {
-  width: 100%;
-  background: gray;
+.image-section {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
 }
 
-.main {
-  width: 100%;
+.header-section {
+  text-align: left;
 }
 
-.mid {
-  width: 80%;
-}
-
-.action-bar ul {
-  list-style-type: none;
+.header-section p, .header-section h3 {
+  display: inline-block;
 }
 
 .posted-by {
   text-align: right;
 }
 
-.action-bar li {
+.mid {
+  text-align: left;
+}
+
+.lower {
+  text-align: left;
+}
+
+.lower p {
+  list-style-type: none;
   display: inline-block;
-  margin-right: 20px;
-}
-
-.container {
-  margin: 0 auto;
-}
-
-.post {
-  margin: 0 auto;
-  width: 80%;
-  background-color: rgba(0,0,0,0.2);
-  padding: 10px;
-}
-
-.upper p, .lower p {
-  display: inline-block;
-}
-
-.post-img {
-  height: 130px;
-  width: 180px;
-}
-
-.post-title {
-  display: inline-block;
-}
-
-.image-section, .content-section {
-  display: inline-block;
-}
-
-.content-section {
-  width: 82%;
 }
