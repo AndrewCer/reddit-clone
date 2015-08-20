@@ -2,6 +2,16 @@ body{
   padding-top: 50px;
 }
 
+.form-action {
+  transition:0.5s linear all;
+  background: white;
+}
+.ng-touched.ng-invalid {
+  border: solid red 1px;
+  background: rgba(255, 0, 0, 0.5);
+  color:white;
+}
+
 .arrow {
   width: 25px;
   height: 25px;
@@ -13,6 +23,10 @@ body{
 
 .red {
   color: red;
+}
+
+.form-post label, .btn {
+  margin-top: 10px;
 }
 
 .post {

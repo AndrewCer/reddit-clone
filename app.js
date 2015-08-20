@@ -12,7 +12,7 @@ app.controller('subAndSearch', function ($scope) {
   {
     imgUrl: 'http://www.carolinacremation.com/versionone/wp-content/uploads/2011/06/the-great-outdoors-wallpapers_3680_16001.jpg',
     title: 'Holy Cow!',
-    likeCount: 9,
+    likeCount: -2,
     author: 'Mountain Man Jack',
     description: "Umami vegan disrupt, butcher flannel fingerstache keytar normcore tousled before they sold out. 90's squid fanny pack, biodiesel chillwave fixie retro drinking vinegar before they sold out scenester. Fingerstache food truck cliche migas viral iPhone. Street art authentic dreamcatcher mlkshk Pinterest, small batch narwhal fap 3 wolf moon locavore",
     created: Date()
@@ -42,6 +42,22 @@ app.controller('subAndSearch', function ($scope) {
     }
     if (filterOption === 'title') {
       $scope.sortByType = "title";
+    }
+  };
+  $scope.submitForm = function (isValid, title, author, imgUrl, description) {
+    if (isValid) {
+      var schemaObj = {
+        imgUrl: imgUrl,
+        title: title,
+        likeCount: 0,
+        author: author,
+        description: description,
+        created: Date()
+      };
+      $scope.posts.push(schemaObj)
+    }
+    else {
+      
     }
   }
 });
