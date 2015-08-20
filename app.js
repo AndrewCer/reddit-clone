@@ -1,11 +1,10 @@
 var app = angular.module('redditClone', []);
 
 app.controller('subAndSearch', function ($scope) {
-  $scope.testing = 'hey';
   $scope.posts = [{
     imgUrl: 'http://www.heartsandmindsbooks.com/Hiking-Shoes-588x391.jpg',
     title: 'Trees Man',
-    likeCount: 0,
+    likeCount: 2,
     author: 'Bob',
     description: "Umami vegan disrupt, butcher flannel fingerstache keytar normcore tousled before they sold out. 90's squid fanny pack, biodiesel chillwave fixie retro drinking vinegar before they sold out scenester. Fingerstache food truck cliche migas viral iPhone. Street art authentic dreamcatcher mlkshk Pinterest, small batch narwhal fap 3 wolf moon locavore",
     created: 'date goes here'
@@ -13,7 +12,7 @@ app.controller('subAndSearch', function ($scope) {
   {
     imgUrl: 'http://www.carolinacremation.com/versionone/wp-content/uploads/2011/06/the-great-outdoors-wallpapers_3680_16001.jpg',
     title: 'Holy Cow!',
-    likeCount: 0,
+    likeCount: 9,
     author: 'Mountain Man Jack',
     description: "Umami vegan disrupt, butcher flannel fingerstache keytar normcore tousled before they sold out. 90's squid fanny pack, biodiesel chillwave fixie retro drinking vinegar before they sold out scenester. Fingerstache food truck cliche migas viral iPhone. Street art authentic dreamcatcher mlkshk Pinterest, small batch narwhal fap 3 wolf moon locavore",
     created: Date()
@@ -21,15 +20,28 @@ app.controller('subAndSearch', function ($scope) {
   {
     imgUrl: 'https://oneadamtwelv.files.wordpress.com/2012/07/p8131124.jpg',
     title: 'Marshy Marsh',
-    likeCount: 0,
+    likeCount: 4,
     author: 'Marsh Man',
     description: "Umami vegan disrupt, butcher flannel fingerstache keytar normcore tousled before they sold out. 90's squid fanny pack, biodiesel chillwave fixie retro drinking vinegar before they sold out scenester. Fingerstache food truck cliche migas viral iPhone. Street art authentic dreamcatcher mlkshk Pinterest, small batch narwhal fap 3 wolf moon locavore",
     created: Date()
   }];
   $scope.upVote = function (index) {
-    $scope.posts[index].likeCount = $scope.posts[index].likeCount + 1
+    console.log(this.post);
+    this.post.likeCount += 1
   }
   $scope.downVote = function (index) {
-    $scope.posts[index].likeCount = $scope.posts[index].likeCount - 1
+    this.post.likeCount -= 1
+  }
+  $scope.initialSort = '-likeCount';
+  $scope.filter = function (filterOption) {
+    if (filterOption === 'vote') {
+      $scope.sortByType = "-likeCount";
+    }
+    if (filterOption === 'date') {
+      $scope.sortByType = "created";
+    }
+    if (filterOption === 'title') {
+      $scope.sortByType = "title";
+    }
   }
 });

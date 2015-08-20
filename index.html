@@ -23,22 +23,20 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#submitPost">&plus; Submit Post</a></li>
-            <li><input style='margin-top: 11px;' type="text" placeholder="Search"></li>
+            <li><input style='margin-top: 11px;' type="text" placeholder="Search" ng-model='userSearch'></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By: <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Votes</a></li>
-                <li><a href="#">Date</a></li>
-                <li><a href="#">Title</a></li>
+                <li><a href="#" ng-click='filter("vote")'>Votes</a></li>
+                <li><a href="#" ng-click='filter("date")'>Date</a></li>
+                <li><a href="#" ng-click='filter("title")'>Title</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <!-- <div class="container"> -->
-      <div class="col-md-8 col-md-offset-2 post" ng-repeat='post in posts'>
+      <div class="col-md-8 col-md-offset-2 post" ng-repeat='post in posts | orderBy:sortByType || initialSort | filter:userSearch'>
         <div class="image-section">
           <img ng-src="{{post.imgUrl}}" class='post-img'>
         </div>
@@ -62,35 +60,5 @@
           </div>
         </div>
       </div>
-    <!-- </div> -->
   </body>
-
-  <!--    <div class='main'>
-        <div class='container'>
-          <div class='post' ng-repeat='post in posts'>
-            <div class='image-section'>
-              <img ng-src='{{post.imgUrl}}' class='post-img'>
-            </div>
-            <div class='content-section'>
-              <div class='upper'>
-                <h3 class='post-title'>{{post.title}} |</h3>
-                <p>&uarr;</p>
-                <p>&darr;</p>
-                <p>count(number)</p>
-              </div>
-              <p class='posted-by'>By: {{post.author}}</p>
-              <div class='mid'>
-                <p>{{post.description}}</p>
-              </div>
-              <div class='lower'>
-                <p>{{post.created}} |</p>
-                <p>2 Comment(s)   |</p>
-                <p>Add Comment</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body> -->
 </html>
